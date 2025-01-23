@@ -1,0 +1,32 @@
+{
+  "name": "todo-list-be",
+  "version": "1.0.0",
+  "description": "BE on Docker container for simplify initial serving",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsc && node build/index.js",
+    "dev": "npx nodemon",
+    "build": "npm run prisma:generate && tsc",
+    "prisma:generate": "npx prisma generate",
+    "prisma:apply": "npx prisma migrate dev",
+    "infrastructure:up": "docker-compose -f scripts/infrastructure.yml -p to-do-be up -d && npm run prisma:apply",
+    "infrastructure:down": "docker-compose -p to-do-be down",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alexoid1999",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
