@@ -15,7 +15,7 @@ After that Front-end would be served and runned on `localhost:3000`
 [BE]:
   - Open separate terminal in folder /todo-list-be
   - Execute `npm i`
-  - Execute `infrastructure:up` - this will upload docker images, serving and hosting local container with PostgreSQL server and PgAdmin
+  - Execute `npm run infrastructure:up` - this will upload docker images, serving and hosting local container with PostgreSQL server and PgAdmin
   - Use `npm run dev` to start express.js server
 
 Congratulations!
